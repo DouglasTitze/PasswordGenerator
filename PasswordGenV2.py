@@ -13,7 +13,9 @@ passLength = min(len(combined),max(8,int(input("What is the password's max lengt
 # Forces the user to have a password of atleast 8 characters
 numPasswords = max(1,int(input("\nHow many passowrds would you like to create?\n")))
 
-saveToFile = bool(int(input("\nWould you like this password saved in a passwords file?\nInput 1 for yes, 0 for no.\n")))
+saveToFile = input("\nWould you like this password saved in a passwords file?\nInput 1 for yes, 0 for no.\n")
+if saveToFile == "1": saveToFile = True
+else: saveToFile = False
 
 for i in range(numPasswords):
     password = "".join(rd.sample(combined,passLength))
